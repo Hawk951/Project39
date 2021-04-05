@@ -1,10 +1,13 @@
+//gamestates
 var PLAY = 1;
 var END = 0;
 var gameState = PLAY;
 
+//create the variables
 var trex, trex_running, trex_collided;
 var ground, invisibleGround, groundImage;
 
+//create variable groups
 var cloudsGroup, cloudImage;
 var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obstacle6;
 
@@ -15,6 +18,7 @@ var gameOver, restart;
 localStorage["HighestScore"] = 0;
 
 function preload(){
+  //load all the images
   trex_running =   loadAnimation("trex1.png","trex3.png","trex4.png");
   trex_collided = loadAnimation("trex_collided.png");
   
@@ -37,6 +41,7 @@ function preload(){
 function setup() {
   createCanvas(600, 200);
   
+  //create the sprites
   trex = createSprite(50,180,20,50);
   
   trex.addAnimation("running", trex_running);
